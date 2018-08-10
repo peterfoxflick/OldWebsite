@@ -83,7 +83,7 @@ a:active {
 }
 
 
-
+/* Borrowed from W3 School -> https://www.w3schools.com/css/css_tooltip.asp*/
 
 .tooltip {
     position: relative;
@@ -110,6 +110,7 @@ a:active {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -123,7 +124,7 @@ a:active {
 
 
 
-
+/* Responsive design */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
 	.card {

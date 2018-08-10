@@ -1,0 +1,161 @@
+
+/*Main Rules for all sizes*/
+body {
+	background-color: #959aa0;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Cutive Mono', monospace;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+#logo h1 {
+	color: #033F63;
+}
+
+a:link {
+    text-decoration: none;
+    color: #D5A021;
+}
+
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #D5A021;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.header {
+	margin: auto;
+	max-width: 600px;
+}
+
+#header {
+	padding: 10px;
+}
+
+
+#projects {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 20px;
+  padding: 10px;
+
+}
+
+.card {
+  position: relative;
+  grid-column: span 4;
+  background-color: #048BA8;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+.card img {
+	width: 100%;
+}
+
+.card .links {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.card i {
+	font-size: 2em;
+	margin-left: 10px;
+}
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -55px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.card {
+		grid-column: span 12;
+	}
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	body {
+		margin: 0 15% 0 15%;
+	}
+	.card {
+		grid-column: span 12;
+	}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.card {
+		grid-column: span 6;
+	}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.card {
+		grid-column: span 4;
+	}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

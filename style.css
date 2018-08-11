@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 3em;
 }
 
 #logo h1 {
@@ -24,7 +24,7 @@ h1 {
 
 a:link {
     text-decoration: none;
-    color: #D5A021;
+    color: inherit;
 }
 
 a:visited {
@@ -53,7 +53,7 @@ a:active {
 
 #projects {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 20px;
   padding: 10px;
 

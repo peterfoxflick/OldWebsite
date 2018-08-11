@@ -1,40 +1,58 @@
-// <div class="card">
-// 	<img src="./media/projects/001.png">
-// 	<h3>Card Title</h3>
-// 	<p>A short description would go here and then who knows what would happen to the card. It could end up in outerspace for all I knew.</p>
-// 	<div class="links"> 
-// 		<a hreg="#" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>
-// 		<a hreg="#" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>
-// 		<a hreg="#" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>
-// 	</div>
-// </div>
 
+	// {
+	//  id: 0,
+	// 	name: "AtTiny Dark Detector",
+	// 	des: "This little project makes an ATtiny tell you when it is dark or bright. This project is an excellent introduction to the capabilities of the ATtiny85 chip." ,
+	// 	img: "./media/projects/AttinyDarkDetector.jpeg",
+	// 	showName: true,
+	// 	vid: "#" ,
+	// 	git: "#" ,
+	// 	inst: "#"
+	// } ,
 
 var data = [
 	{
-		name: "Ikea Hacks",
-		des: "A short description would go here and then who knows what would happen to the card. It could end up in outerspace for all I knew." ,
-		img: "./media/projects/001.png",
-		vid: "#" ,
-		git: "#" ,
-		inst: "#"
+		id: 0,
+		name: "AtTiny Dark Detector",
+		des: "This little project makes an ATtiny tell you when it is dark or bright. This project is an excellent introduction to the capabilities of the ATtiny85 chip." ,
+		img: "./media/projects/AttinyDarkDetector.jpg",
+		showName: true,
+		git: "https://gist.github.com/peterfoxflick/89b8bf96cc63584de7f1508845731b1b" ,
+		inst: "https://www.instructables.com/id/ATtiny-Dark-Detector"
 	} ,
 	{
-		name: "Ikea Hacks",
-		des: "A short description would go here and then who knows what would happen to the card. It could end up in outerspace for all I knew." ,
-		img: "./media/projects/001.png",
-		vid: "#" ,
-		git: "#" ,
-		inst: "#"
+		id: 1,
+		name: "Programing AtTiny with Arduino",
+		des: "A quick guide on getting the Arduino IDE to upload code to an Attiny chip." ,
+		img: "./media/projects/AttinyArduinoIDE.jpg",
+		showName: true,
+		inst: "https://www.instructables.com/id/Programing-an-Attiny-with-Arduino/"
 	} ,
 	{
-		name: "Ikea Hacks",
-		des: "A short description would go here and then who knows what would happen to the card. It could end up in outerspace for all I knew." ,
-		img: "./media/projects/001.png",
-		vid: "#" ,
-		git: "#" ,
-		inst: "#"
-	} 
+		id: 2,
+		name: "AtTiny Flower Pot",
+		des: "This flower pot has a built-in sensor that detects when the soil is dry and lets you know. The circuit uses an ATtiny85 as the brain and copper tape as the sensor. " ,
+		img: "./media/projects/AttinyFlowerPot.jpg",
+		showName: true,
+		git: "https://gist.github.com/peterfoxflick/ed59843c6a8567972b84252c02a43d19" ,
+		inst: "https://www.instructables.com/id/ATtiny-Flower-Pot/"
+	} , 
+	{
+		id: 3,
+		name: "Trello on Google Script",
+		des: "A large project from work that takes a Google Form and creates a Trello Card when a responce is submited. The code also creates a Google Doc for every responce based off the answers given." ,
+		img: "./media/projects/trelloGoogleScript.png",
+		showName: true,
+		git: "https://gist.github.com/peterfoxflick/767671089d661155ace7f4d0adde30fc" ,
+	} ,
+	{
+		id: 4,
+		name: "Bulk Change Google Sheets",
+		des: "In connection with the 'Trello on Google Script' project, this code will take a list of Google Sheet IDs and make changes to every sheet on the list. The tricky part was getting it to work with more than 1200 sheets." ,
+		img: "./media/projects/GoogleChangeAll.png",
+		showName: true,
+		git: "https://gist.github.com/peterfoxflick/f29816299e7a2b05d006b7f728b03e70" ,
+	} ,
 ]
 
 
@@ -47,20 +65,26 @@ function popProjects() {
 			output += '<img src="' + data[i].img + '">';
 		}
 
-		output += '<h3>' + data[i].name + '</h3>';
+		if(data[i].showName){
+			output += '<h3>' + data[i].name + '</h3>';
+		}
 
 		if (data[i].des) {
 			output += '<p>' + data[i].des + '</p>';
 		}
+
 		output += '<div class="links">';
+
 		if (data[i].vid) {
-			output += '<a hreg="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
+			output += '<a href="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
 		}
+
 		if (data[i].git) {
-			output += '<a hreg="' + data[i].vid + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
+			output += '<a href="' + data[i].git + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
 		}
+
 		if (data[i].inst) {
-			output += '<a hreg="' + data[i].vid + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
+			output += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
 		}
 
 		output += '</div></div>';
@@ -68,8 +92,7 @@ function popProjects() {
 
 	document.getElementById("projects").innerHTML = output;
 }
-console.log("IM HERE");
 
-		window.onload = popProjects;
+window.onload = popProjects;
 
 

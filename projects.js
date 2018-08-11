@@ -76,22 +76,21 @@ function popProjects() {
 			card.innerHTML += '<p>' + data[i].des + '</p>';
 		}
 
-		card.innerHTML += '<div class="links">';
+		var links = document.createElement('div');
+		links.className = "links";
 
 		if (data[i].vid) {
-			card.innerHTML += '<a href="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
+			links.innerHTML += '<a href="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
 		}
 
 		if (data[i].git) {
-			card.innerHTML += '<a href="' + data[i].git + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
+			links.innerHTML += '<a href="' + data[i].git + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
 		}
 
 		if (data[i].inst) {
-			card.innerHTML += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
+			links.innerHTML += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
 		}
-
-		card.innerHTML += '</div></div>';
-
+		card.appendChild(links);
 		document.getElementById("projects").appendChild(card);
 
 	}

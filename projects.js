@@ -57,9 +57,10 @@ var data = [
 
 
 function popProjects() {
-	var output = "";
-
+document.getElementById("projects").innerHTML = "";
 	for (var i = data.length - 1; i >= 0; i--) {
+		var output = "";
+
 		output += '<div class="card">';
 
 		if (data[i].img) {
@@ -90,7 +91,7 @@ function popProjects() {
 
 		output += '</div></div>';
 
-		document.getElementById("projects").innerHTML = output;
+		document.getElementById("projects").innerHTML = document.getElementById("projects").innerHTML + output;
 	}
 
 }

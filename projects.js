@@ -58,6 +58,7 @@ var data = [
 
 function popProjects() {
 	var output = "";
+
 	for (var i = data.length - 1; i >= 0; i--) {
 		output += '<div class="card">';
 
@@ -88,9 +89,10 @@ function popProjects() {
 		}
 
 		output += '</div></div>';
+
+		document.getElementById("projects").innerHTML = output;
 	}
 
-	document.getElementById("projects").innerHTML = output;
 }
 
 window.onload = popProjects;

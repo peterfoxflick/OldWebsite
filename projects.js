@@ -57,41 +57,43 @@ var data = [
 
 
 function popProjects() {
-document.getElementById("projects").innerHTML = "";
-	for (var i = data.length - 1; i >= 0; i--) {
-		var output = "";
+	document.getElementById("projects").innerHTML = "";
 
-		output += '<div class="card">';
+	for (var i = data.length - 1; i >= 0; i--) {
+		var card = document.createElement('div');
+
+		card.className = "card";
 
 		if (data[i].img) {
-			output += '<img src="' + data[i].img + '">';
+			card.innerHTML += '<img src="' + data[i].img + '">';
 		}
 
 		if(data[i].showName){
-			output += '<h3>' + data[i].name + '</h3>';
+			card.innerHTML += '<h3>' + data[i].name + '</h3>';
 		}
 
 		if (data[i].des) {
-			output += '<p>' + data[i].des + '</p>';
+			card.innerHTML += '<p>' + data[i].des + '</p>';
 		}
 
-		output += '<div class="links">';
+		card.innerHTML += '<div class="links">';
 
 		if (data[i].vid) {
-			output += '<a href="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
+			card.innerHTML += '<a href="' + data[i].vid + '" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>';
 		}
 
 		if (data[i].git) {
-			output += '<a href="' + data[i].git + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
+			card.innerHTML += '<a href="' + data[i].git + '" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">Github Code</span></a>';
 		}
 
 		if (data[i].inst) {
-			output += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
+			card.innerHTML += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
 		}
 
-		output += '</div></div>';
+		card.innerHTML += '</div></div>';
 
-		document.getElementById("projects").innerHTML = document.getElementById("projects").innerHTML + output;
+		document.getElementById("projects").appendChild(card);
+
 	}
 
 }

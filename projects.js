@@ -57,7 +57,8 @@ var data = [
 
 
 function popProjects() {
-	document.getElementById("projects").innerHTML = "";
+	var projects = document.getElementById("projects");
+	projects.innerHTML = "";
 
 	for (var i = data.length - 1; i >= 0; i--) {
 		var card = document.createElement('div');
@@ -91,8 +92,8 @@ function popProjects() {
 			links.innerHTML += '<a href="' + data[i].inst + '" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructions</span></a>';
 		}
 		card.appendChild(links);
-		document.getElementById("projects").appendChild(card);
-
+		
+		projects.appendChild(card);
 	}
 
 }

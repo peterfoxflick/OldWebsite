@@ -1,3 +1,7 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
 
 /*Main Rules for all sizes*/
 body {
@@ -84,7 +88,32 @@ a:active {
 
 /*For Projects page*/
 
+.one-third:nth-child(2) {
+	text-align: center;
+}
 
+.one-third:nth-child(3) {
+	text-align: right;
+}
+
+.one-third {
+	display: inline-block;
+	width: 33%;
+}
+
+.fluid-img {
+	width: 50%;
+	max-width: 300px;
+	align: left;
+}
+
+.fluid-img {
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+	display: block;
+	margin-top: 20px;
+}
 
 /* Borrowed from W3 School -> https://www.w3schools.com/css/css_tooltip.asp*/
 
@@ -101,7 +130,7 @@ a:active {
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    
+
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
@@ -133,7 +162,7 @@ a:active {
 	.card {
 		grid-column: span 12;
 	}
-} 
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -143,21 +172,21 @@ a:active {
 	.card {
 		grid-column: span 12;
 	}
-} 
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 	.card {
 		grid-column: span 6;
 	}
-} 
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 	.card {
 		grid-column: span 4;
 	}
-} 
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {

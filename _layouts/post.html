@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<div style="margin-top:15px;"><a href="{{ site.url }}/projects">&lt&lt Back to Projects</a></div>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- if page.img -%}
+    <img class="fluid-img" src='/assets/projects/{{ page.img }}'>
+  {%- endif -%}
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      <!-- {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}</p> -->
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+
+    {{ content }}
+  </div>
+
+  <div class="links-page">
+
+    {%- if page.video -%}
+      <div class="one-third"><a href="{{ page.video }}" class="tooltip"><i class="fab fa-youtube fa-5x"></i><span class="tooltiptext">YouTube Video</span></a></div>
+    {%- endif -%}
+
+    {%- if page.gitHub -%}
+      <div class="one-third"><a href="{{ page.gitHub }}" class="tooltip"><i class="fab fa-github fa-5x"></i><span class="tooltiptext">GitHub Code</span></a></div>
+    {%- endif -%}
+
+    {%- if page.instructables -%}
+      <div class="one-third"><a href="{{ page.instructables }}" class="tooltip"><i class="fas fa-file-alt fa-5x"></i><span class="tooltiptext">Instructables</span></a></div>
+    {%- endif -%}
+
+  </div>
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

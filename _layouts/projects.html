@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+  <div id="header">
+		<div id="logo">
+			<a href="http://www.peterfoxflick.com"><h1 >PETER FOX FLICK</h1></a>
+		</div>
+    <div class="header">
+      {{ content }}
+    </div>
+  </div>
+
+  <div id="projects">
+  {%- if site.posts.size > 0 -%}
+    {%- for post in site.posts -%}
+      <div class="card">
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {%- if post.img -%}
+            <img src='/assets/projects/{{ post.img }}'>
+          {%- else -%}
+            <h3>{{ post.title }}</h3>
+          {%- endif -%}
+          {%- if post.img && showTitle -%}
+            <h3>{{ post.title }}</h3>
+          {%- endif -%}
+        </a>
+
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+
+        <div class="links">
+
+          {%- if post.video -%}
+<a href="{{ post.video }}" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>
+          {%- endif -%}
+
+          {%- if post.gitHub -%}
+<a href="{{ post.gitHub }}" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">GitHub Code</span></a>
+          {%- endif -%}
+
+          {%- if post.instructables -%}
+<a href="{{ post.instructables }}" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructables</span></a>
+          {%- endif -%}
+
+        </div>
+
+      </div>
+
+      {%- endfor -%}
+    </div>
+
+    <p class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a></p>
+  {%- endif -%}
+
+</div>

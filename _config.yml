@@ -5,8 +5,8 @@ description: > # this means to ignore newlines until "twitter_username:"
   This is my project show off site. Here I show my projects built with Aruduinos,
   Google Script, Trello API, or other programs and fun things that I have done.
 
-baseurl: ""
-url: "http://127.0.0.1:4000"
+baseurl: "/"
+url: "http://peterfoxflick.github.io"
 
 
 # social links

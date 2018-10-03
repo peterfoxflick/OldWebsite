@@ -4,9 +4,7 @@ title: "Trello on Google Script"
 categories: GoogleScript
 img: 'trelloGoogleScript.jpg'
 showTitle: true
-video: 'https://www.youtube.com/watch?v=Cfu80Ljllzo'
-gitHub: 'https://github.com/peterfoxflick/Intern'
-instructables: 'https://www.instructables.com/id/Custom-Car-Badges/'
+gitHub: 'https://gist.github.com/peterfoxflick/767671089d661155ace7f4d0adde30fc'
 ---
 
 A large project from work that takes a Google Form and creates a Trello Card when a response is submitted. The code also creates a Google Doc for every response based on the answers given. The project was used to organize a multi-department project to switch out the schools LMS.  The form was sent to faculty who wanted to transition to the new LMS.<!--more--> This was my first time working with so many users, and I didn't realize how much data validation should be used on the user's input. After a few hours, of the form going live, the code was working great, and the input issues were resolved.

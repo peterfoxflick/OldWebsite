@@ -15,7 +15,7 @@ layout: default
   <div id="projects">
   {%- if site.posts.size > 0 -%}
     {%- for post in site.posts -%}
-      <div class="card">
+      <div class="my-card">
         <a class="post-link" href="{{ post.url | relative_url }}">
           {%- if post.img -%}
             <img src='/assets/projects/{{ post.img }}'>
@@ -34,15 +34,15 @@ layout: default
         <div class="links">
 
           {%- if post.video -%}
-<a href="{{ post.video }}" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltiptext">YouTube Video</span></a>
+<a href="{{ post.video }}"  data-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
           {%- endif -%}
 
           {%- if post.gitHub -%}
-<a href="{{ post.gitHub }}" class="tooltip"><i class="fab fa-github"></i><span class="tooltiptext">GitHub Code</span></a>
+<a href="{{ post.gitHub }}" data-toggle="tooltip" title="GitHub Code"><i class="fab fa-github"></i></a>
           {%- endif -%}
 
           {%- if post.instructables -%}
-<a href="{{ post.instructables }}" class="tooltip"><i class="fas fa-file-alt"></i><span class="tooltiptext">Instructables</span></a>
+<a href="{{ post.instructables }}"  data-toggle="tooltip" title="Instructables"><i class="fas fa-file-alt"></i></a>
           {%- endif -%}
 
         </div>

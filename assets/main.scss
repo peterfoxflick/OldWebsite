@@ -63,7 +63,7 @@ a:active {
 
 }
 
-.card {
+.my-card {
   position: relative;
   grid-column: span 4;
   background-color: #048BA8;
@@ -71,17 +71,17 @@ a:active {
   padding-bottom: 30px;
 }
 
-.card img {
+.my-card img {
 	width: 100%;
 }
 
-.card .links {
+.my-card .links {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
 }
 
-.card i {
+.my-card i {
 	font-size: 2em;
 	margin-left: 10px;
 }
@@ -115,51 +115,75 @@ a:active {
 	margin-top: 20px;
 }
 
-/* Borrowed from W3 School -> https://www.w3schools.com/css/css_tooltip.asp*/
-
-.tooltip {
-    position: relative;
-    display: inline-block;
+#home {
+	* {
+	background-color: #c6cbd1;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-    top: 125%;
-    left: 50%;
-    margin-left: -55px;
+button:focus {
+	outline:none;
 }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
+
+.avitar {
+	border-radius: 50%;
+	width: 100%;
+	max-width: 300px;
+
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
-.tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent black transparent;
+.center-all {
+	text-align: center;
+	margin: auto;
 }
+
+.inherit-width {
+	width: inherit;
+}
+
+#toggleDes {
+	display: none;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 576px) {
+
+	.vertical-center-sm {
+	  display: flex;
+	  align-items: center;
+	}
+
+	.super-container {
+		position: relative;
+		height: 100vh;
+	}
+
+	.super-container .container {
+
+	    margin: 0;
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	}
+
+
+}
+}
+
+
+
+
 
 
 
 /* Responsive design */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-	.card {
+	.my-card {
 		grid-column: span 12;
 	}
 }
@@ -169,21 +193,21 @@ a:active {
 	body {
 		margin: 0 15% 0 15%;
 	}
-	.card {
+	.my-card {
 		grid-column: span 12;
 	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-	.card {
+	.my-card {
 		grid-column: span 6;
 	}
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-	.card {
+	.my-card {
 		grid-column: span 4;
 	}
 }

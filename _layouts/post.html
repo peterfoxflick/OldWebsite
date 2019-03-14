@@ -8,15 +8,15 @@ layout: default
   <div class="links-page">
 
     {%- if page.video -%}
-      <div class="one-third"><a href="{{ page.video }}" class="tooltip"><i class="fab fa-youtube fa-5x"></i><span class="tooltiptext">YouTube Video</span></a></div>
+      <div class="one-third"><a href="{{ page.video }}"  data-toggle="tooltip" title="YouTube"><i class="fab fa-youtube fa-5x"></i></a></div>
     {%- endif -%}
 
     {%- if page.gitHub -%}
-      <div class="one-third"><a href="{{ page.gitHub }}" class="tooltip"><i class="fab fa-github fa-5x"></i><span class="tooltiptext">GitHub Code</span></a></div>
+      <div class="one-third"><a href="{{ page.gitHub }}"  data-toggle="tooltip" title="GitHub Code""><i class="fab fa-github fa-5x"></i></a></div>
     {%- endif -%}
 
     {%- if page.instructables -%}
-      <div class="one-third"><a href="{{ page.instructables }}" class="tooltip"><i class="fas fa-file-alt fa-5x"></i><span class="tooltiptext">Instructables</span></a></div>
+      <div class="one-third"><a href="{{ page.instructables }}"  data-toggle="tooltip" title="Instructables"><i class="fas fa-file-alt fa-5x"></i></a></div>
     {%- endif -%}
 
   </div>

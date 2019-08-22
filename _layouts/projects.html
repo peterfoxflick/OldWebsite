@@ -12,25 +12,29 @@ layout: default
     </div>
   </div>
 
-  <div id="projects">
+     <div class="container">
+   <div class="row justify-content-center" id="frame-holder">
+
   {%- if site.posts.size > 0 -%}
     {%- for post in site.posts -%}
-      <div class="my-card">
+   <div class='card card-frame col-lg-4 col-md-6 col-sm-12 col-12' >
+      <div class='card-body'>
         <a class="post-link" href="{{ post.url | relative_url }}">
           {%- if post.img -%}
-            <img src='/assets/projects/{{ post.img }}'>
+            <img class="card-img-top" src='/assets/projects/{{ post.img }}'>
           {%- else -%}
-            <h3>{{ post.title }}</h3>
+            <h3 class="card-title">{{ post.title }}</h3>
           {%- endif -%}
           {%- if post.img && showTitle -%}
-            <h3>{{ post.title }}</h3>
+            <h3 class="card-title">{{ post.title }}</h3>
           {%- endif -%}
         </a>
 
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <p class="card-text">{{ post.excerpt }}</p>
         {%- endif -%}
 
+<!--
         <div class="links">
 
           {%- if post.video -%}
@@ -46,13 +50,12 @@ layout: default
           {%- endif -%}
 
         </div>
-
+ -->
       </div>
-
+      </div>
       {%- endfor -%}
     </div>
-
-    <p class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}">Subscribe via RSS</a></p>
+    </div>
   {%- endif -%}
 
 </div>

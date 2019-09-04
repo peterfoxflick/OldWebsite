@@ -15,38 +15,40 @@ layout: default
      <div class="container">
    <div class="row justify-content-center" id="frame-holder">
 
-  {%- if site.posts.size > 0 -%}
-    {%- for post in site.posts -%}
+  {%- if site.projects.size > 0 -%}
+  {% assign projects = site.projects | sort: 'date' | reverse %}
+
+    {%- for project in projects -%}
    <div class='card card-frame col-lg-4 col-md-6 col-sm-12 col-12' >
       <div class='card-body'>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {%- if post.img -%}
-            <img class="card-img-top" src='/assets/projects/{{ post.img }}'>
+        <a class="project-link" href="{{ project.url | relative_url }}">
+          {%- if project.img -%}
+            <img class="card-img-top" src='/assets/projects/{{ project.img }}'>
           {%- else -%}
-            <h3 class="card-title">{{ post.title }}</h3>
+            <h3 class="card-title">{{ project.title }}</h3>
           {%- endif -%}
-          {%- if post.img && showTitle -%}
-            <h3 class="card-title">{{ post.title }}</h3>
+          {%- if project.img and showTitle -%}
+            <h3 class="card-title">{{ project.title }}</h3>
           {%- endif -%}
         </a>
 
         {%- if site.show_excerpts -%}
-          <p class="card-text">{{ post.excerpt }}</p>
+          <p class="card-text">{{ project.excerpt }}</p>
         {%- endif -%}
 
 <!--
         <div class="links">
 
-          {%- if post.video -%}
-<a href="{{ post.video }}"  data-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
+          {%- if project.video -%}
+<a href="{{ project.video }}"  data-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
           {%- endif -%}
 
-          {%- if post.gitHub -%}
-<a href="{{ post.gitHub }}" data-toggle="tooltip" title="GitHub Code"><i class="fab fa-github"></i></a>
+          {%- if project.gitHub -%}
+<a href="{{ project.gitHub }}" data-toggle="tooltip" title="GitHub Code"><i class="fab fa-github"></i></a>
           {%- endif -%}
 
-          {%- if post.instructables -%}
-<a href="{{ post.instructables }}"  data-toggle="tooltip" title="Instructables"><i class="fas fa-file-alt"></i></a>
+          {%- if project.instructables -%}
+<a href="{{ project.instructables }}"  data-toggle="tooltip" title="Instructables"><i class="fas fa-file-alt"></i></a>
           {%- endif -%}
 
         </div>

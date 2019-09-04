@@ -2,7 +2,7 @@
 layout: project
 title: "Appointment Scheduler"
 categories: GoogleScript
-img: 'appointmentScheduler.jpg'
+img: 'appointmentScheduler.png'
 showTitle: true
 gitHub: 'https://github.com/peterfoxflick/Appointment-Scheduler'
 ---

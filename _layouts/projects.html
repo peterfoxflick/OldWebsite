@@ -2,12 +2,31 @@
 layout: default
 ---
 
-<div class="home">
-  <div id="header">
-		<div id="logo">
-			<a href="https://peterfoxflick.github.io/"><h1 >PETER FOX FLICK</h1></a>
-		</div>
-    <div class="header">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="https://www.peterfoxflick.com">Peter Fox Flick</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+         <a class="nav-link" href="https://www.peterfoxflick.com">Home </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://www.peterfoxflick.com/projects">Projects <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/peter-flickinger/">LinkedIn</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+ <div class="container">
+    <div class="header my-5">
       {{ content }}
     </div>
   </div>
@@ -17,47 +36,29 @@ layout: default
 
   {%- if site.projects.size > 0 -%}
   {% assign projects = site.projects | sort: 'date' | reverse %}
+  <ul class="list-group list-group-flush">
+     {%- for project in projects -%}
 
-    {%- for project in projects -%}
-   <div class='card card-frame col-lg-4 col-md-6 col-sm-12 col-12' >
-      <div class='card-body'>
-        <a class="project-link" href="{{ project.url | relative_url }}">
-          {%- if project.img -%}
-            <img class="card-img-top" src='/assets/projects/{{ project.img }}'>
-          {%- else -%}
-            <h3 class="card-title">{{ project.title }}</h3>
-          {%- endif -%}
-          {%- if project.img and showTitle -%}
-            <h3 class="card-title">{{ project.title }}</h3>
-          {%- endif -%}
-        </a>
+       <a class="project-link" href="{{ project.url | relative_url }}">
+          <li class="list-group-item">
+             <div class="row">
+                {%- if project.img -%}
+                         <div class="col-md-3 col-sm-12"><img class="img-fluid list-img" src='/assets/projects/{{ project.img }}'></div>
+                {%- endif -%}
+                <div class="col">
+                   <h4>{{ project.title }}</h4>
+                   {%- if site.show_excerpts -%}
+                     <p>{{ project.excerpt }}</p>
+                   {%- endif -%} -->
+                </div>
 
-        {%- if site.show_excerpts -%}
-          <p class="card-text">{{ project.excerpt }}</p>
-        {%- endif -%}
+             </div>
 
-<!--
-        <div class="links">
+          </li>
+       </a>
+    {%- endfor -%}
 
-          {%- if project.video -%}
-<a href="{{ project.video }}"  data-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
-          {%- endif -%}
-
-          {%- if project.gitHub -%}
-<a href="{{ project.gitHub }}" data-toggle="tooltip" title="GitHub Code"><i class="fab fa-github"></i></a>
-          {%- endif -%}
-
-          {%- if project.instructables -%}
-<a href="{{ project.instructables }}"  data-toggle="tooltip" title="Instructables"><i class="fas fa-file-alt"></i></a>
-          {%- endif -%}
-
-        </div>
- -->
-      </div>
-      </div>
-      {%- endfor -%}
-    </div>
-    </div>
+  </ul>
   {%- endif -%}
 
 </div>

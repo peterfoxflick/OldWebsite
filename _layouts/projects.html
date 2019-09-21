@@ -3,7 +3,7 @@ layout: default
 ---
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="https://www.peterfoxflick.com">Peter Fox Flick</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -38,12 +38,11 @@ layout: default
   {% assign projects = site.projects | sort: 'date' | reverse %}
   <ul class="list-group list-group-flush">
      {%- for project in projects -%}
-
-       <a class="project-link" href="{{ project.url | relative_url }}">
           <li class="list-group-item">
-             <div class="row">
+             <a href="{{ project.url | relative_url }}">
+             <div class="row my-5">
                 {%- if project.img -%}
-                         <div class="col-md-3 col-sm-12"><img class="img-fluid list-img" src='/assets/projects/{{ project.img }}'></div>
+                         <div class="col-md-3 col-sm-12 text-center"><div class="my-4"><img class="img-fluid list-img rounded" src='/assets/projects/{{ project.img }}'></div></div>
                 {%- endif -%}
                 <div class="col">
                    <h4>{{ project.title }}</h4>
@@ -51,11 +50,9 @@ layout: default
                      <p>{{ project.excerpt }}</p>
                    {%- endif -%} -->
                 </div>
-
              </div>
-
+          </a>
           </li>
-       </a>
     {%- endfor -%}
 
   </ul>

@@ -20,4 +20,4 @@ The largest part of this project was going through and generating HTML for each 
 
 After a working HTML document was created I went back and added some Bootstrap styling and imported in the quiz title. This greatly increased the look and feel of the quiz.
 
-While no particular part of this project was extremely complicated, the project as a whole served the purpose of filling a common need. It goes to show that a simple program can solve our larger problems. 
+While no particular part of this project was extremely complicated, the project as a whole served the purpose of filling a common need. It goes to show that a simple program can solve our larger problems. You can read more about how I made it on [my blog](http://peterfoxflick.com/learn/2019-09-28-Canvas_Quiz_Printer/). 

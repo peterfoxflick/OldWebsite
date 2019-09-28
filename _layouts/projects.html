@@ -39,19 +39,19 @@ layout: default
   <ul class="list-group list-group-flush">
      {%- for project in projects -%}
           <li class="list-group-item">
-             <a href="{{ project.url | relative_url }}">
-             <div class="row my-5">
-                {%- if project.img -%}
-                         <div class="col-md-3 col-sm-12 text-center"><div class="my-4"><img class="img-fluid list-img rounded" src='/assets/projects/{{ project.img }}'></div></div>
-                {%- endif -%}
-                <div class="col">
-                   <h4>{{ project.title }}</h4>
-                   {%- if site.show_excerpts -%}
-                     <p>{{ project.excerpt }}</p>
-                   {%- endif -%} -->
+             <a href="{{ project.url }}">
+                <div class="row my-5">
+                   {%- if project.img -%}
+                            <div class="col-md-3 col-sm-12 text-center"><div class="my-4"><img class="img-fluid list-img rounded" src='/assets/projects/{{ project.img }}'></div></div>
+                   {%- endif -%}
+                   <div class="col">
+                      <h4>{{ project.title }}</h4>
+                      {%- if site.show_excerpts -%}
+                        <p>{{ project.excerpt }}</p>
+                      {%- endif -%} -->
+                   </div>
                 </div>
-             </div>
-          </a>
+            </a>
           </li>
     {%- endfor -%}
 

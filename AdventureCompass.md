@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # **Privacy Policy**
 
 Peter Flickinger built the Adventure Compass app as a Free app. This SERVICE is provided by Peter Flickinger at no cost and is intended for use as is.
